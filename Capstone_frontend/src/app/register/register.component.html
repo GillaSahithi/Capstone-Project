@@ -1,0 +1,147 @@
+<h1 class="highlight">Welcome Back !</h1>
+<div class="container mt-5">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="row g-3">
+
+        <!-- Role Dropdown -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Select Role</h5>
+                    <div class="form-group">
+                        <select id="role" formControlName="role" class="form-select">
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="customer">Customer</option>
+                            <option value="vendor">Vendor</option>
+                        </select>
+                        <div *ngIf="isFieldInvalid('role')" class="text-danger">
+                            <small *ngIf="registrationForm.get('role')?.errors?.['required']">Role is required.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Username Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Username</h5>
+                    <div class="form-group">
+                        <input id="username" formControlName="username" type="text" class="form-control"
+                            placeholder="Enter username">
+                        <div *ngIf="isFieldInvalid('username')" class="text-danger">
+                            <small *ngIf="registrationForm.get('username')?.errors?.['required']">Username is
+                                required.</small>
+                            <small *ngIf="registrationForm.get('username')?.errors?.['minlength']">Username must be at
+                                least 3 characters.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Email</h5>
+                    <div class="form-group">
+                        <input id="email" formControlName="email" type="email" class="form-control"
+                            placeholder="Enter email">
+                        <div *ngIf="isFieldInvalid('email')" class="text-danger">
+                            <small *ngIf="registrationForm.get('email')?.errors?.['required']">Email is
+                                required.</small>
+                            <small *ngIf="registrationForm.get('email')?.errors?.['email']">Enter a valid email
+                                address.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Password</h5>
+                    <div class="form-group">
+                        <input id="password" formControlName="password" type="password" class="form-control"
+                            placeholder="Enter password">
+                        <div *ngIf="isFieldInvalid('password')" class="text-danger">
+                            <small *ngIf="registrationForm.get('password')?.errors?.['required']">Password is
+                                required.</small>
+                            <small *ngIf="registrationForm.get('password')?.errors?.['minlength']">Password must be at
+                                least 8 characters.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Confirm Password</h5>
+                    <div class="form-group">
+                        <input id="confirmPassword" formControlName="confirmPassword" type="password"
+                            class="form-control" placeholder="Confirm password">
+                        <div *ngIf="isFieldInvalid('confirmPassword') || registrationForm.errors?.['mismatch']"
+                            class="text-danger">
+                            <small *ngIf="registrationForm.get('confirmPassword')?.errors?.['required']">Confirm
+                                Password is required.</small>
+                            <small *ngIf="registrationForm.errors?.['mismatch']">Passwords do not match.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Phone Number</h5>
+                    <div class="form-group">
+                        <input id="phoneNumber" formControlName="phoneNumber" type="text" class="form-control"
+                            placeholder="Enter phone number">
+                        <div *ngIf="isFieldInvalid('phoneNumber')" class="text-danger">
+                            <small *ngIf="registrationForm.get('phoneNumber')?.errors?.['required']">Phone Number is
+                                required.</small>
+                            <small *ngIf="registrationForm.get('phoneNumber')?.errors?.['pattern']">Phone Number must be
+                                10 digits.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Field -->
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Address</h5>
+                    <div class="form-group">
+                        <input id="address" formControlName="address" type="text" class="form-control"
+                            placeholder="Enter address">
+                        <div *ngIf="isFieldInvalid('address')" class="text-danger">
+                            <small *ngIf="registrationForm.get('address')?.errors?.['required']">Address is
+                                required.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Button -->
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Login</button>
+        </div>
+
+        <!-- Sign Up and Forgot Password Links -->
+        <div class="col-12 text-center mt-3">
+            <a href="/signup" class="text-primary" style="display: block; font-size: 14px;">New here? Sign Up</a>
+            <a href="/forgot-password" class="text-danger" style="display: block; font-size: 14px;">Forgot Password?</a>
+        </div>
+    </form>
+</div>

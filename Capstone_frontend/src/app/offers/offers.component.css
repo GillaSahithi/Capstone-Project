@@ -1,0 +1,32 @@
+.highlight{
+  /* text-align: center; */
+  font-family: 'Times New Roman', Times, serif;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  display: flex;           /* Enable flex on card for uniform height */
+  flex-direction: column;  /* Stack children vertically */
+  height: 100%;            /* Allow card to take full height */
+  justify-content: space-between; /* Align content evenly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* cursor: pointer;  */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+}
+
+.card-body {
+  text-align: center; /* Centers text */
+}
+
+
+.container {
+  display: flex;            /* Use flexbox for layout */
+  flex-wrap: wrap;         /* Allow wrapping of items */
+}
+
+
+

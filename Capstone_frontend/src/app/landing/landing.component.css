@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("./images/pic.jpg");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+#features {
+  background-image: url('/public/pic.jpg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Adjust the height as needed */
+  /* background-color:aqua; */
+}
+
+
+.card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card.highlighted {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly scale the card */
+    border: 2px solid #007bff; /* Change border color to indicate highlight */
+  }
+
+  h1{
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+  }
+
+  .container{
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+  }
+
+  

@@ -1,0 +1,19 @@
+<div class="container mt-4" style="font-family: 'Times New Roman', serif;">
+  <h2 class="highlight text-center">Offers</h2> <!-- Use a CSS class for centering -->
+
+  <div *ngIf="offers.length > 0; else noOffers" class="row">
+    <div class="col-md-4 mb-3" *ngFor="let offer of offers">
+      <div class="card" (mouseenter)="onCardHover()" (mouseleave)="onCardLeave()">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{ offer.title }}</b></h5>
+          <p class="card-text">{{ offer.description }}</p>
+          <p class="card-text"><strong>Price:</strong> Rs.{{ offer.price | number:'1.2-2' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noOffers>
+    <p>No offers available for this shop.</p>
+  </ng-template>
+</div>

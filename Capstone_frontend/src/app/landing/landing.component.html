@@ -1,0 +1,50 @@
+<section id="features" class="py-5 landing-page" 
+         style="background-image: url('/public/pic.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;">
+  <div class="top">
+    <!-- <h1>ELEVATE LOCAL !!</h1> -->
+  </div>
+  <br>
+  
+  <div class="col-12 mb-4 text-center">
+    <button class="btn btn-primary" style="font-family: 'Times New Roman';" (click)="goToRegister()">Login</button>
+  </div>
+  
+  <h1 class="text-center"><b>Our Key Features!!</b></h1>
+  
+  <div class="container">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card square-card" [class.highlighted]="hoveredCardIndex === 0" (click)="selectCard(0)" 
+             (mouseenter)="onCardHover(0)" (mouseleave)="onCardLeave()">
+          <img src="./images/delivery.jpg" class="card-img-top" alt="Feature 1 Image">
+          <div class="card-body">
+            <h5 class="card-title">Free Shipping Across India on Orders Above ₹299!</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card square-card" [class.highlighted]="hoveredCardIndex === 1" (click)="selectCard(1)" 
+             (mouseenter)="onCardHover(1)" (mouseleave)="onCardLeave()">
+          <img src="/public/delivery.jpg" class="card-img-top" alt="Feature 2 Image">
+          <div class="card-body">
+            <h5 class="card-title">Nearby Finds, <br> Delivered Fast</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card square-card" [class.highlighted]="hoveredCardIndex === 2" (click)="selectCard(2)" 
+             (mouseenter)="onCardHover(2)" (mouseleave)="onCardLeave()">
+          <img src="/public/Trusted Vendors.jpg" class="card-img-top" alt="Feature 3 Image">
+          <div class="card-body">
+            <h5 class="card-title">Sourced from trusted vendors, our products are crafted to meet everyone's needs.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

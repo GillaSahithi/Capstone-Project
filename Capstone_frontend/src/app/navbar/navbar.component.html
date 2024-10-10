@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><b> ELEVATE LOCAL</b></a>
+
+    <!-- Toggle Button for Collapsing Navbar -->
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="navbarNav"
+      aria-expanded="!isCollapsed" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [class.collapse]="isCollapsed" class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" aria-current="page">Home</a>
+        </li>
+
+        <!-- Explore -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/explore" routerLinkActive="active">Explore</a>
+        </li>
+
+        <!-- Offers -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/offers" routerLinkActive="active">Offers</a>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
+        </li>
+
+        <!-- Profile Icon Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"> </i>
+
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" routerLink="/profile" (click)="goToProfile()">My Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" (click)="confirmLogout()">Logout</a></li>
+          </ul>
+      </ul>
+    </div>
+  </div>
+</nav>

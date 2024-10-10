@@ -1,0 +1,44 @@
+.events {
+    display: flex;
+    flex-direction: column; /* Ensure the cards are stacked vertically */
+    align-items: center;
+    margin: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.event-card {
+    width: 100%; /* Make each event card take up the full width */
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    display: flex; /* Align button and text side by side */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-info {
+    width: 70%; /* Text area width */
+    text-align: center;
+}
+
+.register-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
